@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMarker</title>
+    <link rel="icon" href="./images/ribbon-1202757_640.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <section>
+        <div class="container py-2 d-flex flex-column justify-content-center align-items-center m-auto">
+            <h1 class="main-color py-3 position-relative">Bookmarker</h1>
+            <div class="main-sec mt-5 w-100 d-flex flex-column justify-content-center align-items-center py-4 p-3 gap-4 ">
+                <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+                <div class="site-name w-100 d-flex flex-column justify-content-center">
+                    <label for="bookmarkName" class="pb-2 fw-semibold main-colot"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+                    <input type="text" placeholder="Bookmark Name" class="form-control validation" oninput="isNameValid()" id="bookmarkName">
+                </div>
+                <div class="site-url w-100 d-flex flex-column justify-content-center">
+                    <label for="bookmarkURL" class="pb-2 fw-semibold main-color"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                    <input type="url" placeholder="Website URL" class="form-control validation" oninput="isUrlValid()" id="bookmarkURL">
+                </div>
+                <button class="btn btn-danger px-5" onclick="addSite()">Submit</button>
+            </div>
+            <table class="table mt-4 text-center bg-light">
+                <thead>
+                    <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">Website Name</th>
+                        <th class="text-capitalize">Visit</th>
+                        <th class="text-capitalize">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent">
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </section>
+    <section id="tabError" class="position-fixed start-0 top-0 end-0 bottom-0  d-none">
+        <div class="container  m-auto">
+            <div class="overlay w-50  mx-auto bg-white p-3 rounded-2   ">
+                <div class="close-sec d-flex justify-content-between align-items-center">
+                    <div class="rounded">
+                        <span class=" rounded-circle me-2 d-inline-block bg-danger "></span>
+                        <span class=" rounded-circle me-2 d-inline-block bg-warning"></span>
+                        <span class=" rounded-circle me-2 d-inline-block bg-success "></span>
+                    </div>
+                    <i id="closeBtn" class="fa-solid fa-xmark fs-3 "></i>
+                </div>
+                <h4 class="fw-bolder pt-4 px-1">Site Name or Url is not valid, Please follow the rules below :</h4>
+
+                <p class="fw-bold"><i class="fa-regular fa-circle-right text-danger px-2 pb-2"></i>Site name must contain at least 3 characters</p>
+                <p class="fw-bold"><i class="fa-regular fa-circle-right text-danger px-2"></i>Site URL must be a valid one</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/fb27b24f16.js" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

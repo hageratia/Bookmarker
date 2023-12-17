@@ -1,0 +1,95 @@
+:root {
+    --main-color: #352e28;
+}
+
+::selection {
+    background-color: #FEC260;
+}
+
+body {
+    background-color: #F7ECDE;
+}
+
+.main-color {
+    color: #352e28;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 25%;
+    z-index: -1;
+    background-color: #fec260;
+    transition: height 0.35s;
+}
+
+h1:hover::before {
+    height: 50%;
+}
+
+.main-sec {
+    border-width: 2px 0;
+    border-style: dotted;
+    border-color: var(--main-color);
+}
+
+h2 {
+    font-family: 'Righteous', sans-serif;
+    font-size: 25px;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#tabError {
+    font-family: 'Bree Serif', serif;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay .close-sec span {
+    width: 20px;
+    height: 20px;
+}
+
+.overlay .close-sec i {
+    cursor: pointer;
+}
+
+.validation:focus {
+    box-shadow: 0 0 0 0.25rem rgba(245, 184, 85, 0.5);
+}
+
+.validation.notValid:focus {
+    box-shadow: 0 0 0 0.25rem rgba(235, 26, 26, 0.5);
+}
+
+.validation.notValid {
+    background-image: url(../images/error.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.validation.valid:focus {
+    box-shadow: 0 0 0 0.25rem rgba(6, 247, 46, 0.5);
+}
+
+.validation.valid {
+    background-image: url(../images/check.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+
+/* .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+} */
